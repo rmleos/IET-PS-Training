@@ -194,5 +194,5 @@ $OUadgroup = 'IET-US-PS-Lession1'
 foreach ($user in $userList) {
     $aduser = Get-ADUser -Identity $user -Server $ad3domain
     $adgroup = Get-ADGroup -Identity $OUadgroup -Server $oudomain
-    Add-ADGroupMember -Identity $OUadgroup -Members $aduser -Server $oudomain
+    Add-ADGroupMember -Identity $adgroup -Members $aduser -Server $oudomain
 }
