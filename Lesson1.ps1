@@ -17,18 +17,27 @@ $myvarable = 'annyawhnghasehyo'
 
 $myvarable2 = 'annyawhnghasehyo'
 
-#Built in varable Null
+#Built in variable Null
 $null
 
-#Using null varable to null a varable
+#Using null variable to null a varable
 $myvarable = $null
 
-#Enviorment varable, gets computer name
-$env:COMPUTERNAME 
+#Enviorment variable, gets computer name
+$env:COMPUTERNAME
+#Gets user name
 $env:USERNAME
+#Gets users domain
+$env:USERDNSDOMAIN
 
 $computername = $env:COMPUTERNAME
 $username = $env:USERNAME
+#Create UPN from user name and users domain
+$env:USERNAME+'@'+$env:USERDNSDOMAIN
+#Save UPN to variable
+$usernUPN = $env:USERNAME+'@'+$env:USERDNSDOMAIN
+
+
 
 
 #Array a collection of varables or objects
@@ -47,6 +56,8 @@ $myarry2
 #Add variables to array
 $myarry2 += $myvarable
 $myarry2 += $myvarable2
+
+
 
 
 #Object is a collection of known attributes/properties to consume
@@ -77,8 +88,6 @@ Add-Member -InputObject $myobject -MemberType NoteProperty -Name MYPCInstallDate
 Add-Member -InputObject $myobject -MemberType NoteProperty -Name MYPCName -Value $os.CSName
 Add-Member -InputObject $myobject -MemberType NoteProperty -Name MYPCUser -Value $env:USERNAME
 
-
-
 #View created object
 $myobject
 #View variables in object
@@ -89,9 +98,16 @@ $myobject.MYPCName
 $myobject.MYPCUser
 
 
+
+
 #Modules are scripts that contain functions to get data from specific resrouces
 #Import Active Directory module
 Import-Module ActiveDirectory
+
+#Lookup user in AD
+get-aduseer -Identity rick-srv
+#lookup user in AD using variable
+get-aduser -Identity $usernUPN
 
 #Lookup computer in AD 
 get-adcomputer -Identity putil4
@@ -99,6 +115,9 @@ get-adcomputer -Identity putil4
 Get-ADComputer -Identity $env:COMPUTERNAME 
 #Lookup computer in AD using property in custom object
 Get-ADComputer -Identity $myobject.MYPCName
+
+
+
 
 #Troubleshooting powershell errors
 #Lookup computer in AD will bad object
@@ -108,7 +127,3 @@ Get-ADComputer -Identity $myobject.MYPChostname
 Get-ADComputer -Identity DCCS-RDB
 
 Get-ADComputer -Identity DCCS-RDB -Server
-
-
-
-
