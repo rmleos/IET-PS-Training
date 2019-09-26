@@ -1,39 +1,3 @@
-#Powershell ISE link
-https://docs.microsoft.com/en-us/powershell/scripting/components/ise/exploring-the-windows-powershell-ise?view=powershell-5.1
-
-
-
-#Modules are scripts that contain functions to get data from specific resrouces
-#Import Active Directory module
-Import-Module ActiveDirectory
-
-#Lookup user in AD
-get-aduseer -Identity rick-srv
-#lookup user in AD using variable
-get-aduser -Identity $usernUPN
-
-#Lookup computer in AD 
-get-adcomputer -Identity putil4
-#Lookup computer in AD using Enviorment varable
-Get-ADComputer -Identity $env:COMPUTERNAME 
-#Lookup computer in AD using property in custom object
-Get-ADComputer -Identity $myobject.MYPCName
-
-
-
-
-#Troubleshooting powershell errors
-#Lookup computer in AD will bad object
-Get-ADComputer -Identity $myobject.MYPChostname
-
-#Lookup computer in AD fails, not found in domain
-Get-ADComputer -Identity DCCS-RDB
-
-Get-ADComputer -Identity DCCS-RDB -Server
-
-
-
-
 #View group in AD
 Get-ADGroup -Identity IET-US-demo -Server ou.ad3.ucdavis.edu
 
