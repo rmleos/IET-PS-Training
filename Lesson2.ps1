@@ -102,10 +102,11 @@ if (!(Test-Path -Path $PROFILE ))
 { New-Item -Type File -Path $PROFILE -Force }
 
 #Items I want in my profile
+Write-Host 'If you work to hard Tom will just give you more work!' -BackgroundColor Red -ForegroundColor Yellow
 $env:COMPUTERNAME
 $env:USERNAME
 Get-NetIPAddress | select IPAddress
-Write-Host 'If you work to hard Tom will just give you more work!' -BackgroundColor Red -ForegroundColor Yellow
+cd C:\Users\rick-srv\Documents
 
 #Use Powershell to add text to file
 Add-Content $PROFILE {
@@ -113,6 +114,7 @@ Add-Content $PROFILE {
     $env:COMPUTERNAME
     $env:USERNAME
     Get-NetIPAddress | select IPAddress
+    cd C:\Users\rick-srv\Documents
 }
 
 #PowerShell remoting
