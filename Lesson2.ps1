@@ -105,7 +105,7 @@ if (!(Test-Path -Path $PROFILE ))
 Write-Host 'If you work to hard Tom will just give you more work!' -BackgroundColor Red -ForegroundColor Yellow
 $env:COMPUTERNAME
 $env:USERNAME
-Get-NetIPAddress | select IPAddress
+Get-NetIPAddress | Select-Object IPAddress
 cd C:\Users\rick-srv\Documents
 
 #Use Powershell to add text to file
@@ -113,7 +113,7 @@ Add-Content $PROFILE {
     Write-Host 'If you work to hard Tom will just give you more work!' -BackgroundColor Red -ForegroundColor Yellow
     $env:COMPUTERNAME
     $env:USERNAME
-    Get-NetIPAddress | select IPAddress
+    Get-NetIPAddress | Select-Object IPAddress
     cd C:\Users\rick-srv\Documents
 }
 
