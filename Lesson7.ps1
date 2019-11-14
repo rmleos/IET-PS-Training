@@ -1,3 +1,7 @@
+#Working with Certificates in PowerShell
+Start-Process iexplore.exe 'https://blogs.technet.microsoft.com/scotts-it-blog/2014/12/30/working-with-certificates-in-powershell/'
+Start-Process chrome.exe 'https://techcommunity.microsoft.com/t5/Enterprise-Mobility-Security/Configuring-Remote-Desktop-certificates/ba-p/247007'
+
 #Get the RDP Thumbprint
 Get-WmiObject -class “Win32_TSGeneralSetting” -Namespace root\cimv2\terminalservices
 
