@@ -12,7 +12,8 @@ Start-Process chrome.exe 'https://docs.microsoft.com/en-us/powershell/scripting/
 
 #Command to set system DSC local config manager to register to MOF file
 Set-DscLocalConfigurationManager -Path C:\Scripts\DscMetaConfigs -ComputerName $env:COMPUTERNAME
-
+#Force system to update/apply it's DSC config
+Update-DscConfiguration
 
 
 <#
