@@ -91,12 +91,13 @@ Configuration DscMetaConfigs
 $Params = @{
      RegistrationUrl = '<fill me in>';
      RegistrationKey = '<fill me in>';
-     ComputerName = @('<some VM to onboard>', '<some other VM to onboard>');
-     NodeConfigurationName = 'SimpleConfig.webserver';
+     ComputerName = @('server1', 'server2');
+     #ComputerName = $env:COMPUTERNAME;
+     NodeConfigurationName = 'Lesson10-Part2';
      RefreshFrequencyMins = 30;
      ConfigurationModeFrequencyMins = 15;
      RebootNodeIfNeeded = $False;
-     AllowModuleOverwrite = $False;
+     AllowModuleOverwrite = $true;
      ConfigurationMode = 'ApplyAndMonitor';
      ActionAfterReboot = 'ContinueConfiguration';
      ReportOnly = $False;  # Set to $True to have machines only report to AA DSC but not pull from it
