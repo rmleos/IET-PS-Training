@@ -21,9 +21,9 @@ Update-DscConfiguration
 Order of setting up DSC
 
 1. Generate the DSC config file with the actions your would like it to do.
-2. Upload the DSC config file to Azure or DSC server.
+2. Upload the DSC config file to Azure or DSC server. (Files Lesson10-DSC-Config.ps1 and Lesson10-DSC-Config2.ps1)
 3. Compile the uploaded DSC config file within Azure.
-4. Create MOF file for the system being adding to DSC management.
+4. Create MOF file for the system being adding to DSC management. (File Lesson10-MOF-Creation-Script.ps1)
 5. Run Set-DscLocalConfigurationManager command pointing to MOF file.
 6. View results of DSC management.
 7. Change DSC config if needed within Azure.
