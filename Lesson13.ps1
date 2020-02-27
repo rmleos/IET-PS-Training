@@ -1,0 +1,1 @@
+﻿Just talked about Azure
